@@ -1,1 +1,10 @@
 workflows:
+  flutter-ios-build:
+    name: Flutter iOS Build
+    environment:
+      flutter: stable
+    scripts:
+      - flutter pub get
+      - flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/iphoneos/Runner.app
